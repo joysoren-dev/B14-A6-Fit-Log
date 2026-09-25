@@ -9,33 +9,41 @@ export default function Home() {
         <Navbar />
 
         {/* Hero Section */}
-        <main className="px-6 py-11">
+        <main className="px-6 py-8">
           <section className="relative min-h-[430px] overflow-hidden rounded-[16px] border border-[#24282d] bg-[#15181c]">
-            <div className="relative z-10 flex min-h-[430px] items-center px-12 py-16">
-              <div className="max-w-[540px]">
+            {/* Hero Content */}
+            <div className="relative z-10 flex min-h-[430px] items-center px-10 py-14 md:px-12">
+              <div className="max-w-[600px]">
                 <p className="mb-5 text-xs font-bold tracking-[0.12em] text-[#b6ff00]">
                   WORKOUT LIBRARY
                 </p>
 
-                <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.04em] text-white">
-                  TRAIN WITH INTENT.
+                <h1 className="max-w-[600px] text-4xl font-black leading-[0.95] tracking-[-0.04em] text-white sm:text-[44px]">
+                  TRAIN WITH INTENT. LOG
                   <br />
-                  LOG EVERY SET.
+                  EVERY SET.
                 </h1>
 
-                <p className="mt-6 max-w-[480px] text-base leading-7 text-[#9b9fa5]">
-                  Build better habits, track your progress, and stay consistent
-                  with every workout.
+                <p className="mt-6 max-w-[470px] text-sm leading-6 text-[#9b9fa5]">
+                  FitLog is a dark, no-nonsense gym companion: pick a lift, lock
+                  it into today's plan, and watch the week's work add up.
                 </p>
 
                 <a
                   href="#library"
-                  className="mt-8 inline-flex rounded-full bg-[#b6ff00] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#c5ff33]"
+                  className="mt-7 inline-flex rounded-full bg-[#b6ff00] px-6 py-3 text-xs font-bold text-black transition hover:bg-[#c5ff33]"
                 >
                   BROWSE WORKOUTS
                 </a>
               </div>
             </div>
+
+            {/* Hero Image */}
+            <img
+              src="/assets/banner.png"
+              alt="Workout training"
+              className="absolute right-6 top-1/2 h-[82%] w-[38%] -translate-y-1/2 object-contain md:right-10"
+            />
           </section>
 
           {/* Library */}
