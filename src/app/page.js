@@ -104,7 +104,7 @@ export default function Home() {
                         {workout.muscleGroups.map((muscle) => (
                           <span
                             key={muscle}
-                            className="rounded-full border border-[#343941] px-3 py-1 text-[11px] text-[#9b9fa5]"
+                            className="rounded-full bg-[#b6ff00] px-3 py-1 text-[10px] font-bold text-black"
                           >
                             {muscle}
                           </span>
