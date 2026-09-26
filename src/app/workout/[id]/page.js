@@ -56,11 +56,22 @@ export default function WorkoutDetails({ params }) {
     fetch(`https://api.abcz.workers.dev/api/fitlog/${workoutId}`)
       .then((response) => response.json())
       .then((data) => {
+        if (
+          !data ||
+          !Array.isArray(data.muscleGroups) ||
+          !Array.isArray(data.instructions)
+        ) {
+          setWorkout(null);
+          setLoading(false);
+          return;
+        }
+
         setWorkout(data);
         setLoading(false);
       })
       .catch((error) => {
         console.error("Failed to load workout:", error);
+        setWorkout(null);
         setLoading(false);
       });
   }, [workoutId]);
@@ -78,8 +89,27 @@ export default function WorkoutDetails({ params }) {
 
   if (!workout) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-[#0b0d0f] text-white">
-        <p className="text-sm text-[#8e939a]">Workout not found.</p>
+      <main className="flex min-h-[calc(100vh-74px)] items-center justify-center bg-[#0b0d0f] px-6 text-white">
+        <div className="text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#b6ff00]">
+            404
+          </p>
+
+          <h1 className="mt-3 text-4xl font-black uppercase tracking-tight">
+            Page Not Found
+          </h1>
+
+          <p className="mt-3 text-sm text-[#8e939a]">
+            The workout you are looking for does not exist.
+          </p>
+
+          <Link
+            href="/"
+            className="mt-6 inline-flex rounded-full bg-[#b6ff00] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#c5ff33]"
+          >
+            Back to workouts
+          </Link>
+        </div>
       </main>
     );
   }

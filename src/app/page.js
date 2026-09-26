@@ -90,10 +90,10 @@ export default function Home() {
     <main className="min-h-screen bg-[#0b0d0f] text-white">
       <div className="mx-auto max-w-[1174px]">
         {/* Hero Section */}
-        <div className="px-6 py-8">
-          <section className="relative min-h-[430px] overflow-hidden rounded-[16px] border border-[#24282d] bg-[#15181c]">
-            <div className="relative z-10 flex min-h-[430px] items-center px-10 py-14 md:px-12">
-              <div className="max-w-[600px]">
+        <div className="px-4 py-6 sm:px-6 sm:py-8">
+          <section className="relative overflow-hidden rounded-[16px] border border-[#24282d] bg-[#15181c]">
+            <div className="relative z-10 flex min-h-[430px] flex-col justify-center px-6 py-12 sm:px-10 sm:py-14 md:flex-row md:items-center md:px-12">
+              <div className="relative z-20 max-w-[600px] md:w-[62%]">
                 <p className="mb-5 text-xs font-bold tracking-[0.12em] text-[#b6ff00]">
                   WORKOUT LIBRARY
                 </p>
@@ -118,17 +118,19 @@ export default function Home() {
                   <ArrowRightIcon />
                 </a>
               </div>
-            </div>
 
-            <img
-              src="/assets/banner.png"
-              alt="Workout training"
-              className="absolute right-6 top-1/2 h-[82%] w-[38%] -translate-y-1/2 object-contain md:right-10"
-            />
+              <div className="relative mt-8 flex h-[220px] w-full items-center justify-center md:mt-0 md:h-auto md:w-[38%]">
+                <img
+                  src="/assets/banner.png"
+                  alt="Workout training"
+                  className="h-full max-h-[240px] w-full object-contain md:max-h-[350px]"
+                />
+              </div>
+            </div>
           </section>
 
           {/* Library */}
-          <section id="library" className="py-20">
+          <section id="library" className="py-16 sm:py-20">
             <div className="mb-10">
               <p className="mb-3 text-xs font-bold tracking-[0.12em] text-[#b6ff00]">
                 THE LIBRARY
@@ -146,6 +148,7 @@ export default function Home() {
             {loading ? (
               <div className="flex min-h-[300px] flex-col items-center justify-center rounded-[14px] border border-[#24282d] bg-[#15181c]">
                 <div className="h-8 w-8 animate-spin rounded-full border-2 border-[#24282d] border-t-[#b6ff00]" />
+
                 <p className="mt-4 text-sm text-[#8e939a]">
                   Loading workouts...
                 </p>
