@@ -39,7 +39,7 @@ function BookmarkIcon() {
 }
 
 export default function WorkoutDetails({ params }) {
-  const { addToPlan, addToSaved } = usePlan();
+  const { addToPlan, addToSaved, showToast } = usePlan();
   const [workout, setWorkout] = useState(null);
   const [loading, setLoading] = useState(true);
   const [workoutId, setWorkoutId] = useState(null);
@@ -199,7 +199,10 @@ export default function WorkoutDetails({ params }) {
             {/* Buttons */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <button
-                onClick={() => addToPlan(workout)}
+                onClick={() => {
+                  addToPlan(workout);
+                  showToast("Added to today's plan");
+                }}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#b6ff00] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#c5ff33]"
               >
                 <CalendarPlusIcon />
@@ -207,7 +210,10 @@ export default function WorkoutDetails({ params }) {
               </button>
 
               <button
-                onClick={() => addToSaved(workout)}
+                onClick={() => {
+                  addToSaved(workout);
+                  showToast("Saved for later");
+                }}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-[#42464d] px-6 py-3 text-sm font-bold text-white transition hover:border-[#b6ff00] hover:text-[#b6ff00]"
               >
                 <BookmarkIcon />

@@ -97,6 +97,7 @@ export default function MyPlan() {
     removeFromPlan,
     removeFromSaved,
     markAsDone,
+    showToast,
   } = usePlan();
 
   const [activeTab, setActiveTab] = useState("plan");
@@ -306,7 +307,10 @@ export default function MyPlan() {
 
                         {activeTab === "plan" && (
                           <button
-                            onClick={() => markAsDone(workout.id)}
+                            onClick={() => {
+                              markAsDone(workout.id);
+                              showToast("Workout marked as done");
+                            }}
                             disabled={isDone}
                             className={`inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-[11px] font-bold transition ${
                               isDone
@@ -320,11 +324,21 @@ export default function MyPlan() {
                         )}
 
                         <button
-                          onClick={() =>
-                            activeTab === "plan"
-                              ? removeFromPlan(workout.id)
-                              : removeFromSaved(workout.id)
-                          }
+                          onClick={() => {
+                            if (activeTab === "plan") {
+                              removeFromPlan(workout.id);
+
+                              setTimeout(() => {
+                                showToast("Removed from today's plan");
+                              }, 0);
+                            } else {
+                              removeFromSaved(workout.id);
+
+                              setTimeout(() => {
+                                showToast("Removed from saved");
+                              }, 0);
+                            }
+                          }}
                           aria-label={`Remove ${workout.name}`}
                           className="inline-flex h-8 w-8 items-center justify-center rounded-full text-[#777d85] transition hover:bg-[#24282d] hover:text-white"
                         >
