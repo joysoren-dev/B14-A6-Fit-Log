@@ -36,32 +36,6 @@ FitLog is a dark, responsive workout library and daily workout planner built wit
 - **Empty states** — My Plan provides clear empty-state messages when no workouts have been added or saved.
 - **Vercel deployment** — The application is deployed to a production Vercel URL from the main branch.
 
-## Project Requirements Checklist
-
-- [x] Project name included
-- [x] Project description included
-- [x] Technologies used documented
-- [x] More than 5 key features documented
-- [x] Live deployed site included
-- [x] GitHub repository included
-- [x] Workout API endpoints documented
-- [x] Main project pages documented
-- [x] Local setup instructions included
-- [x] Responsive design implemented
-- [x] Workout library implemented
-- [x] Workout details page implemented
-- [x] Today's Plan implemented
-- [x] Saved workouts implemented
-- [x] Plan and Saved navigation counters implemented
-- [x] Loading state implemented
-- [x] Toast notifications implemented
-- [x] Custom 404 handling implemented
-- [x] Responsive navigation implemented
-- [x] Workout sorting implemented
-- [x] Mark as Done functionality implemented
-- [x] Remove workout functionality implemented
-- [x] Production deployment completed
-
 ## Workout API
 
 FitLog uses the following REST API endpoints.
@@ -90,107 +64,6 @@ This endpoint returns the details of an individual workout using its ID.
 | `/workout/:id` | Individual workout details, instructions, and workout actions |
 | `/my-plan` | Today's Plan and Saved workout management |
 | Unknown routes | Custom 404 not-found experience |
-
-## Project Highlights
-
-### Workout Library
-
-The home page presents the workout collection with muscle-group tags, equipment, duration, calories, and ratings. Workout data is fetched from the FitLog API and displayed in a responsive grid.
-
-Selecting a workout opens its dedicated details page.
-
-The hero section includes a Browse Workouts button that takes users directly to the workout library.
-
-### Workout Details
-
-Each workout has a dedicated details view containing:
-
-- Workout image
-- Workout name
-- Description
-- Muscle groups
-- Equipment
-- Difficulty
-- Sets
-- Reps
-- Duration
-- Calories
-- Rating
-- Four workout instructions
-
-Users can add the workout to Today's Plan or save it for later.
-
-### My Plan
-
-The My Plan page contains separate tabs for:
-
-- Today's Plan
-- Saved
-
-It also displays live workout metrics including:
-
-- Exercises
-- Minutes
-- Calories
-
-Users can view workout details, mark planned workouts as done, and remove workouts from Today's Plan or Saved.
-
-### Sorting
-
-The workout list can be sorted by:
-
-- Duration
-- Calories
-- Rating
-
-Duration is used as the default sorting option. Changing the sorting option re-sorts the current list.
-
-### User Feedback
-
-Interactive workout actions provide immediate toast feedback when a workout has been:
-
-- Added to Today's Plan
-- Saved for later
-- Marked as done
-- Removed
-
-### Responsive Navigation
-
-The desktop navigation contains the main workout links and live Plan and Saved counters.
-
-On smaller screens, the navigation switches to a mobile menu while keeping the main navigation accessible.
-
-### Loading State
-
-The application displays loading feedback while workout data is being fetched from the API.
-
-The main workout library displays:
-
-```text
-Loading workouts...
-```
-
-while the data is loading.
-
-### Empty States
-
-The My Plan page provides clear empty states when there are no workouts in Today's Plan or Saved.
-
-Users can return to the workout library and start adding workouts from there.
-
-### Error Handling
-
-The application includes custom handling for unknown routes and invalid workout IDs so users receive a clear not-found experience instead of an unhandled runtime error.
-
-### Responsive Design
-
-The application is designed to work across:
-
-- Mobile
-- Tablet
-- Desktop
-
-The layout, navigation, workout cards, details page, My Plan page, buttons, metrics, and footer adapt to different screen sizes.
 
 ## Getting Started
 
@@ -261,31 +134,6 @@ B14-A6-Fit-Log/
 ├── jsconfig.json
 └── README.md
 ```
-
-## Deployment
-
-The production version is deployed on **Vercel** from the `main` branch.
-
-**Live URL:** [https://fit-log-chi-lyart.vercel.app/](https://fit-log-chi-lyart.vercel.app/)
-
-The deployed application has been tested across the main pages and responsive layouts.
-
-## GitHub
-
-**Repository:** [https://github.com/joysoren-dev/B14-A6-Fit-Log](https://github.com/joysoren-dev/B14-A6-Fit-Log)
-
-The project was developed through multiple meaningful Git commits covering:
-
-- Next.js project setup
-- Initial FitLog layout and navigation
-- Hero section
-- Workout API integration
-- Workout details
-- My Plan functionality
-- Toast notifications
-- Custom 404 handling
-- Responsive improvements
-- Error handling
 
 ## Author
 
