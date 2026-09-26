@@ -1,8 +1,7 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [workouts, setWorkouts] = useState([]);
@@ -24,9 +23,6 @@ export default function Home() {
     <div className="min-h-screen bg-[#1e1e1f] text-white">
       {/* Main Website */}
       <div className="mx-auto min-h-screen max-w-[1174px] bg-[#0b0d0f]">
-        {/* Navbar */}
-        <Navbar />
-
         {/* Hero Section */}
         <main className="px-6 py-8">
           <section className="relative min-h-[430px] overflow-hidden rounded-[16px] border border-[#24282d] bg-[#15181c]">
@@ -89,9 +85,10 @@ export default function Home() {
             ) : (
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {workouts.map((workout) => (
-                  <div
+                  <Link
                     key={workout.id}
-                    className="overflow-hidden rounded-[14px] border border-[#24282d] bg-[#15181c]"
+                    href={`/workout/${workout.id}`}
+                    className="block overflow-hidden rounded-[14px] border border-[#24282d] bg-[#15181c] transition hover:border-[#b6ff00]"
                   >
                     <img
                       src={workout.image}
@@ -125,7 +122,7 @@ export default function Home() {
                         <span>★ {workout.rating}</span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}

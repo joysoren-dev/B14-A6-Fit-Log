@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePlan } from "@/context/PlanContext";
 
 export default function WorkoutDetails({ params }) {
+  const { addToPlan, addToSaved } = usePlan();
   const [workout, setWorkout] = useState(null);
   const [loading, setLoading] = useState(true);
   const [workoutId, setWorkoutId] = useState(null);
@@ -159,11 +161,17 @@ export default function WorkoutDetails({ params }) {
 
             {/* Buttons */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <button className="rounded-full bg-[#b6ff00] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#c5ff33]">
+              <button
+                onClick={() => addToPlan(workout)}
+                className="rounded-full bg-[#b6ff00] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#c5ff33]"
+              >
                 + Add to today&apos;s plan
               </button>
 
-              <button className="rounded-full border border-[#42464d] px-6 py-3 text-sm font-bold text-white transition hover:border-[#b6ff00] hover:text-[#b6ff00]">
+              <button
+                onClick={() => addToSaved(workout)}
+                className="rounded-full border border-[#42464d] px-6 py-3 text-sm font-bold text-white transition hover:border-[#b6ff00] hover:text-[#b6ff00]"
+              >
                 ♡ Save for later
               </button>
             </div>
