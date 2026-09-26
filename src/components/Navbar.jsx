@@ -12,7 +12,7 @@ const Navbar = () => {
   const isPlanActive = pathname === "/my-plan";
 
   return (
-    <nav className="w-full border-b border-[#1d2024] bg-[#0b0d0f]">
+    <nav className="sticky top-0 z-50 w-full border-b border-[#1d2024] bg-[#0b0d0f]">
       <div className="mx-auto flex h-[74px] max-w-[1174px] items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
